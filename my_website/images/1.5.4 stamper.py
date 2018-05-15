@@ -18,7 +18,7 @@ from PIL import ImageTk # a subpackage that must be imported explicitly
 
 import os.path              
 __dir__ = os.path.dirname(os.path.abspath(__file__))  
-filename = os.path.join(__dir__, 'minion 12.png')
+filename = os.path.join(__dir__, 'minion 222.png')
 
 img = PIL.Image.open(filename)
 
@@ -26,14 +26,14 @@ root = Tk() # create main window; must be done before using ImageTk
 
 # A slider to set degrees per iteration
 rotation = IntVar()
-rotSlider = Scale(root, variable=rotation, from_=1, to=30,
+rotSlider = Scale(root, variable=rotation, from_=1, to=180,
                   orient=HORIZONTAL, label='Degrees:')
 rotation.set(10)
 rotSlider.grid(column=0, row=0, sticky=W)
 
 # A slider to set the number of iterations
 iteration = IntVar()
-iterSlider = Scale(root, variable=iteration, from_=2, to=15,
+iterSlider = Scale(root, variable=iteration, from_=2, to=40,
                    orient=HORIZONTAL, label='Iterations:')
 iteration.set(10)
 iterSlider.grid(column=0, row=1, sticky=W)
@@ -53,7 +53,7 @@ ccw.set(1)
 direction.grid(column=0, row=3, sticky=W)
 
 # A canvas for mouse events and image drawing
-canvas = Canvas(root, height=600, width=600, bg='cyan')
+canvas = Canvas(root, height=600, width=600, bg='green')
 canvas.grid(column=1, row=0, rowspan=4, sticky=W)
 canvas.imglist=[] #to prevent garbage collection
 
